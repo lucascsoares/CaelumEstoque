@@ -11,35 +11,53 @@
     <title>Form</title>
 </head>
 <body>
+    <br/>
     <div>
         <form action="/Produto/Adiciona" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label for="nome">Nome: </label>
+                        <input id="nome" name="produto.nome" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="preco">Preço: </label>
+                        <input id="preco" name="produto.preco" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="quantidade">Quantidade: </label>
+                        <input id="quantidade" name="produto.quantidade" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="descricao">Descrição: </label>
+                        <input id="descricao" name="produto.descricao" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="categoria">Categoria: </label>
+                        <select id="categoria" name="produto.CategoriaId">
+                            @foreach (var categoria in ViewBag.Categorias)
+                            {
+                                <option value="@categoria.Id">@categoria.Nome</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                </table>
 
-            <label for="nome">Nome: </label>
-            <input id="nome" name="produto.nome" />
-
-            <label for="preco">Preço: </label>
-            <input id="preco" name="produto.preco" />
-
-            <label for="quantidade">Quantidade: </label>
-            <input id="quantidade" name="produto.quantidade" />
-
-            <label for="descricao">Descrição: </label>
-            <input id="descricao" name="produto.descricao" />
-
-            <label for="categoria">Categoria: </label>
-            <select id="categoria" name="produto.CategoriaId">
-                @foreach (var categoria in ViewBag.Categorias)
-                {
-                    <option value="@categoria.Id">@categoria.Nome</option>
-                }
-            </select>
-
-            <br /><br />
-            <!-- <input type="button" title="Salvar" value="Salvar" />  -->
-            <button> @Html.ActionLink("Salvar", "Adiciona", "Produto")</button>
-            <button> @Html.ActionLink("Lista", "Index", "Produto") </button>
-            <br />
-            <button> @Html.ActionLink("Página Inicial", "Index", "Home") </button>
+                <br />
+                <!-- <input type="button" title="Salvar" value="Salvar" />  -->
+                <button> @Html.ActionLink("Salvar", "Adiciona", "Produto")</button>
+                <button> @Html.ActionLink("Lista", "Index", "Produto") </button>
+                <br />
+                <button> @Html.ActionLink("Página Inicial", "Index", "Home") </button>
 
         </form>
     </div>
