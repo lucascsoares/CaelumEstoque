@@ -35,8 +35,11 @@
             </select>
 
             <br /><br />
-            <input type="button" title="Salvar" value="Salvar" />
-            <div> @Html.ActionLink("Volar", "Index", "Produto") </div>
+            <!-- <input type="button" title="Salvar" value="Salvar" />  -->
+            <button> @Html.ActionLink("Salvar", "Adiciona", "Produto")</button>
+            <button> @Html.ActionLink("Lista", "Index", "Produto") </button>
+            <br />
+            <button> @Html.ActionLink("Página Inicial", "Index", "Home") </button>
 
         </form>
     </div>

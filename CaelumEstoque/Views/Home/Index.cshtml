@@ -11,8 +11,48 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
-        <h1>Página Inicial da aplicação</h1>
+    <div>
+
+        <div class="jumbotron">
+            <h2>
+                Bem Vindo!
+            </h2>
+            <p>
+                Escolha abaixo a opção desejada:
+            </p>
+            <!--
+                        <p>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-secondary" type="button"> @Html.ActionLink("Lista de Produtos", "Index", "Produto") </button>
+                                <button class="btn btn-secondary" type="button"> @Html.ActionLink("Cadastro", "Form", "Produto") </button>
+                            </div>
+                        </p>
+            -->
+        </div>
+
     </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group" role="group">
+
+                    <button class="btn btn-secondary" type="button">
+                        @Html.ActionLink("Lista de Produtos", "Index", "Produto")
+                    </button>
+                    <button class="btn btn-secondary" type="button">
+                        @Html.ActionLink("Cadastro", "Form", "Produto")
+                    </button>
+                    <button class="btn btn-secondary" type="button">
+                        Teste 3
+                    </button>
+                    <button class="btn btn-secondary" type="button">
+                        Teste 4
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

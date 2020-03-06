@@ -31,7 +31,6 @@ namespace CaelumEstoque.Controllers
             return View();
         }
 
-        /*
                 public ActionResult Adiciona(String nome, float preco, int quantidade, String descricao, int categoriaId)
                 {
                     Produto produto = new Produto() {
@@ -48,8 +47,8 @@ namespace CaelumEstoque.Controllers
                     return View();
 
             }
-        */
 
+/*
         public ActionResult Adiciona(Produto produto)
         {
             ProdutosDAO dao = new ProdutosDAO();
@@ -59,6 +58,7 @@ namespace CaelumEstoque.Controllers
             //   return View();
             return RedirectToAction("Index");
         }
+*/
 
     }
 }
