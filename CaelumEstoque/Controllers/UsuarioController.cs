@@ -32,7 +32,7 @@ namespace CaelumEstoque.Controllers
             UsuariosDAO dao = new UsuariosDAO();
             IList<Usuario> usuarios = dao.Lista();
 
-            return RedirectToAction("Form");
+            return RedirectToAction("Index");
         }
 
     }
