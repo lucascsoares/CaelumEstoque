@@ -11,38 +11,34 @@
     <title>Form</title>
 </head>
 <body>
-    <br/>
+    <br />
     <div>
-        <form action="/Produto/Adiciona" method="post">
-            <table>
+        @using (Html.BeginForm("Adiciona", "Produto", FormMethod.Get))
+        {
+        <form>
+            <table class="table table-bordered">
                 <tr>
                     <td>
                         <label for="nome">Nome: </label>
-                        <input id="nome" name="produto.nome" />
+                        <input id="nome" name="produto.nome" style="width: 200px;" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="preco">Preço: </label>
-                        <input id="preco" name="produto.preco" />
+                        <input id="preco" name="produto.preco" style=" margin-left:2px; width:200px;" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="quantidade">Quantidade: </label>
-                        <input id="quantidade" name="produto.quantidade" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="descricao">Descrição: </label>
-                        <input id="descricao" name="produto.descricao" />
+                        <input id="quantidade" name="produto.quantidade" style="width:80px;" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria" name="produto.CategoriaId">
+                        <select id="categoria" name="produto.CategoriaId" style="margin-left:13px;">
                             @foreach (var categoria in ViewBag.Categorias)
                             {
                                 <option value="@categoria.Id">@categoria.Nome</option>
@@ -50,16 +46,27 @@
                         </select>
                     </td>
                 </tr>
-                </table>
+                <tr>
+                    <td>
+                        <label for="descricao">Descrição: </label>
+                        <br />
+                        <input id="descricao" name="produto.descricao" style="width: 300px; height:60px;" />
+                    </td>
+                </tr>
 
-                <br />
-                <!-- <input type="button" title="Salvar" value="Salvar" />  -->
-                <button> @Html.ActionLink("Salvar", "Adiciona", "Produto")</button>
-                <button> @Html.ActionLink("Lista", "Index", "Produto") </button>
-                <br />
-                <button> @Html.ActionLink("Página Inicial", "Index", "Home") </button>
-
+            </table>
+            <button type="submit"> Salvar </button>
         </form>
+        }
+        <br />
+        <!-- <input type="button" title="Salvar" value="Salvar" />  -->
+
+        <br />
+
+        <button style="margin-top: 10px;"> @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" }) </button>
+        <button> @Html.ActionLink("Lista de Produtos", "Index", "Produto", null, new { style = "text-decoration:none;" }) </button>
+
+
     </div>
 </body>
 </html>

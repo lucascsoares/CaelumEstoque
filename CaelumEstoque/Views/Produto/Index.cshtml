@@ -10,10 +10,11 @@
     <title>Index</title>
 </head>
 <body>
+    <form>
     <div>
-        <table class="table table-sm table-hover table-bordered">
+        <table class="table table-bordered">
             <thead>
-                <tr>
+                <tr style="background-color:lightgray;">
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Quantidade</th>
@@ -22,47 +23,21 @@
             <tbody>
                 @foreach (var produto in ViewBag.Produtos)
                 {
-                    <tr>
+                    <tr style="border-bottom-color:aqua;">
                         <td>@produto.Id</td>
-                        <td>@produto.Nome</td>
-                        <td>@produto.Quantidade</td>
+                        <td style="width:200px; text-align:center;">@produto.Nome</td>
+                        <td style="text-align:center;">@produto.Quantidade</td>
                     </tr>
                 }
             </tbody>
         </table>
-        <button> @Html.ActionLink("Cadastro", "Form", "Produto") </button>
+        <button style="margin-top:10px;"> @Html.ActionLink("Cadastrar Produto", "Form", "Produto", null, new { style = "text-decoration:none;" }) </button>
         <br />
-        <button> @Html.ActionLink("Página Inicial", "Index", "Home") </button>
+        <button style="margin-top: 10px;"> @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" }) </button>
 
     </div>
 
-
-
-
-    <!--
-        <div>
-            <form action="/Produto/Adiciona">
-
-                <label for="nome">Nome: </label>
-                <input id="nome" name="nome" />
-
-                <label for="preco">Preço: </label>
-                <input id="preco" name="preco" />
-
-                <label for="quantidade">Quantidade: </label>
-                <input id="quantidade" name="quantidade" />
-
-                <label for="descricao">Descrição: </label>
-                <input id="descricao" name="descricao" />
-
-                <label for="categoria">Categoria: </label>
-                <input id="categoria" name="categoriaId" />
-
-                <br /><br />
-                <input type="button">
-    -->
     </form>
-    </div>
 
 </body>
 </html>
