@@ -58,7 +58,7 @@ namespace CaelumEstoque.Controllers
                     dao.Adiciona(produto);
 
                     //   return View();
-                    return RedirectToAction("Index");
+                    return RedirectToAction(Url.Action("","Home","Index"));
                 }
         
 

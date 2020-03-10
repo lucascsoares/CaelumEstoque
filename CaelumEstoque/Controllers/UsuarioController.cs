@@ -22,8 +22,18 @@ namespace CaelumEstoque.Controllers
             UsuariosDAO dao = new UsuariosDAO();
             dao.Adiciona(usuario);
 
-            return RedirectToAction("Home/Index");
-            
+         //   return RedirectToAction("Index");
+            return RedirectToAction(Url.Action("", "Home", "Index"));
+
         }
+
+        public ActionResult listaUsuario(Usuario usuario)
+        {
+            UsuariosDAO dao = new UsuariosDAO();
+            IList<Usuario> usuarios = dao.Lista();
+
+            return RedirectToAction("Form");
+        }
+
     }
 }
