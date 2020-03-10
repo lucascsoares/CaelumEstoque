@@ -22,7 +22,7 @@ namespace CaelumEstoque.Controllers
             UsuariosDAO dao = new UsuariosDAO();
             dao.Adiciona(usuario);
 
-            return Index();
+            return RedirectToAction("Home/Index");
             
         }
     }
