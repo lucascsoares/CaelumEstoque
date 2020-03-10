@@ -12,7 +12,6 @@
 </head>
 <body>
     <div>
-
         <div class="jumbotron">
             <h2>
                 Cadastro de Usuario
@@ -20,57 +19,63 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <form role="form">
-                            <div class="form-group">
+                        @using (Html.BeginForm("adicionaUsuario", "Usuario", FormMethod.Get))
+                        {
+                            <form role="form">
+                                <div class="form-group">
 
-                                <label for="nomeUsuario">
-                                    Nome de usuário
-                                </label>
+                                    <label for="nomeUsuario">
+                                        Nome de usuário
+                                    </label>
+                                    <br />
+                                    <input type="text" class="form-control" name="usuario.Nome" id="nomeUsuario"
+                                           style="border-radius: 35px 50px 50px 50px; height:25px;" />
+                                </div>
                                 <br />
-                                <input type="text" class="form-control" id="nomeUsuario" style="border-radius: 35px 50px 50px 50px; height:25px;" />
-                            </div>
-                            <br />
-                            <div class="form-group">
+                                <div class="form-group">
 
-                                <label for="senha">
-                                    Senha
-                                </label>
-                                <br />
-                                <input type="password" class="form-control" id="senha" style="border-radius: 35px 50px 50px 50px; height:25px;" />
-                                <br />
-                                <label for="senha">
-                                    Confirmação de senha
-                                </label>
-                                <br />
-                                <input type="password" class="form-control" id="confirmacaoSenha" style="border-radius: 35px 50px 50px 50px; height:25px;" />
-                            </div>
+                                    <label for="senha">
+                                        Senha
+                                    </label>
+                                    <br />
+                                    <input type="password" class="form-control" name="usuario.Senha" id="senha"
+                                           style="border-radius: 35px 50px 50px 50px; height:25px;" />
+                                    <br />
+                                    <label for="senha" style="padding-top:10px;">
+                                        Confirmação de senha
+                                    </label>
+                                    <br />
+                                    <input type="password" class="form-control" id="confirmacaoSenha"
+                                        name="usuario.Senha"   style="border-radius: 35px 50px 50px 50px; height:25px;" />
+                                </div>
 
+                                <button type="submit">Btn Salva </button>
 
-                        </form>
+                            </form>
+                        }
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <br />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group" role="group">
+
+                        <button class="btn btn-secondary" type="button">
+                            @Html.ActionLink("Cadastrar", "Form", "Produto", null, new { style = "text-decoration:none;" })
+                        </button>
+                        <br />
+                        <button style="margin-top: 10px;">
+                            @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" })
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
-    <br />
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="btn-group" role="group">
-
-                    <button class="btn btn-secondary" type="button">
-                        @Html.ActionLink("Cadastrar", "Form", "Produto", null, new { style = "text-decoration:none;" })
-                    </button>
-                    <br />
-                    <button style="margin-top: 10px;">
-                        @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" })
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
+    </body>
 </html>
