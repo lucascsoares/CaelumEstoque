@@ -14,13 +14,18 @@
     <div> 
         <table>
             <thead>
-                <tr> ID</tr>
-                <tr> Nome</tr>
-                <tr> Senha</tr>
+                <th> ID</th>
+                <th> Nome</th>
             </thead>
-            <tbody>
-
-            </tbody>
+                <tbody>
+                    @foreach (var user in ViewBag.usuarios)
+                    {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Nome</td>
+                    </tr>
+                    }
+                </tbody>
         </table>
 
 

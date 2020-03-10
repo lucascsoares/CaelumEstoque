@@ -46,31 +46,30 @@
                                     </label>
                                     <br />
                                     <input type="password" class="form-control" id="confirmacaoSenha"
-                                        name="usuario.Senha"   style="border-radius: 35px 50px 50px 50px; height:25px;" />
+                                           name="usuario.Senha" style="border-radius: 35px 50px 50px 50px; height:25px;" />
                                 </div>
 
-                                <button type="submit">Salvar Cadastro </button>
+                                <button style="margin-top:10px;" type="submit">Salvar Cadastro </button>
 
                             </form>
                         }
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <br />
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="btn-group" role="group">
-                        <button style="margin-top: 10px;">
-                            @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" })
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
-    </body>
+    </div>
+    <br />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group" role="group">
+                    <button style="margin-top: 10px;">
+                        @Html.ActionLink("Página Inicial", "Index", "Home", null, new { style = "text-decoration:none;" })
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
